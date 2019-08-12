@@ -65,6 +65,7 @@ validator.arrayOfSameTypes = (arr) => {
  * @param valueArr
  * @param approvedList
  * @returns {boolean}
+ * 
  */
 
 validator.arrayInArray = (valueArr, approvedList) => {
