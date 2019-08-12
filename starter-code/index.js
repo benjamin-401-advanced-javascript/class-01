@@ -3,9 +3,29 @@
 const validator = require('./lib/validator');
 
 
-// Vinicio - add some code here to be able to use the module using console.log
+let str = 'yes';
+let num = 1;
+let arr = ['a'];
+let obj = { x: 'y' };
+let func = () => { };
+let bool = false;
 
-console.log('I am going to test if a value is one');
-console.log(validator.isValid(123123, 'one'));
+console.log(validator.isString(str));
+console.log(validator.isString(num));
 
-console.log(validator.isValid('I am a negative value: -1', 'negative'));
+console.log(validator.isValid(obj, 'numbers'));
+console.log(validator.isValid(func, 'numbers'));
+
+console.log(validator.isValid(func, 'arrays'));
+console.log(validator.isValid(arr, 'arrays'));
+
+console.log(validator.isValid(obj, 'objects'));
+console.log(validator.isValid(func, 'objects'));
+
+console.log(validator.isValid(func, 'booleans'));
+console.log(validator.isValid(bool, 'booleans'));
+
+console.log(validator.isValid(obj, 'functions'));
+console.log(validator.isValid(func, 'functions'));
+
+

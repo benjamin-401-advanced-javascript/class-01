@@ -19,27 +19,27 @@ let validator = module.exports = {};
 validator.isValid = (input, rules) => {
 
   if (rules === 'strings') {
-    return typeof input === 'string'
+    return typeof input === 'string';
   }
 
   if (rules === 'numbers') {
-    return typeof input === 'number'
+    return typeof input === 'number';
   }
 
   if (rules === 'arrays') {
-    return Array.isArray(input)
+    return Array.isArray(input);
   }
 
   if (rules === 'objects') {
-    return typeof input === 'object'
+    return typeof input === 'object';
   }
 
   if (rules === 'booleans') {
-    return typeof input === 'boolean'
+    return typeof input === 'boolean';
   }
 
   if (rules === 'functions') {
-    return typeof input === 'function'
+    return typeof input === 'function';
   }
 
 };
@@ -54,10 +54,10 @@ validator.arrayOfSameTypes = (arr) => {
   const typeArr = arr.map(e => typeof e);
   const lengthArr = [];
   for (let i = 0; i < typeArr.length; i++) {
-    if (i === 0) lengthArr.push(typeArr[i])
-    if (!lengthArr.includes(typeArr[i])) lengthArr.push(typeArr[i])
+    if (i === 0) lengthArr.push(typeArr[i]);
+    if (!lengthArr.includes(typeArr[i])) lengthArr.push(typeArr[i]);
   }
-  return lengthArr.length === 1
+  return lengthArr.length === 1;
 };
 
 /**
@@ -69,7 +69,7 @@ validator.arrayOfSameTypes = (arr) => {
  */
 
 validator.arrayInArray = (valueArr, approvedList) => {
-  let flag = true
+  let flag = true;
   valueArr.forEach(element => {
     if (!approvedList.includes(element))
       flag = false;
@@ -85,7 +85,7 @@ validator.arrayInArray = (valueArr, approvedList) => {
  */
 
 validator.hasProperty = (obj, property) => {
-  return obj.hasOwnProperty(property)
+  return obj.hasOwnProperty(property);
 };
 
 /**
